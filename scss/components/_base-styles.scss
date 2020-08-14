@@ -1,0 +1,26 @@
+* {
+  font-family: $font-stack-primary;
+}
+
+body {
+  display: relative;
+
+}
+
+h1 {
+  font-weight: $font-weight-accent;
+  font-family: $font-stack-accent;
+  font-size: 20px;
+  margin: 4%;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: $font-weight-primary-heading;
+  font-size: 18px;
+}
+
+p {
+  color: $color-text;
+  font-weight: $font-weight-primary;
+}

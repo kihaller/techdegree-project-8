@@ -1,0 +1,27 @@
+.card {
+  border: $border;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+
+.avatar {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 0.8em;
+}
+
+.text-container h2 {
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  margin: 5px auto;
+}
+
+.text-container {
+  padding: 10px;
+}
