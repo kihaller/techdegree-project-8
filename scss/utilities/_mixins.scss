@@ -1,0 +1,24 @@
+@mixin widget-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+@mixin widget-large {
+  @include widget-small;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+@mixin widget-padding {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin round-images {
+  border-radius: 50%;
+}
