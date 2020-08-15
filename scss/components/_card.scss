@@ -2,15 +2,15 @@
   border: $border;
   border-radius: 7px;
   display: flex;
-  justify-content: space-around;
   padding: 5px;
+  cursor: pointer;
 }
 
 
 .avatar {
   border-radius: 50%;
   height: 100px;
-  width: 100px;
+  width: auto;
   margin: 0.8em;
 }
 
