@@ -8,10 +8,12 @@ body {
 }
 
 h1 {
+  display: inline-block;
   font-weight: $font-weight-accent;
   font-family: $font-stack-accent;
   font-size: 20px;
   margin: 4%;
+  padding: 6.6px 0px;
   text-transform: uppercase;
 }
 

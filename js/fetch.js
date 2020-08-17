@@ -30,13 +30,13 @@ async function createEmployeeElements(employee) {
 }
 
 async function createEmployeeCard(employee) {
-  console.log("Create emplyee card with employee: ", employee);
+  console.log("Create employee card with employee: ", employee);
   const employeeCard = document.createElement("div");
   employeeCard.classList.add("card");
   employeeCard.innerHTML = `
   <img class="avatar" src="${employee.picture.large}" />
   <div class="text-container">
-    <h2>${employee.name.first} ${employee.name.last}</h2>
+    <h2 id="employee-name">${employee.name.first} ${employee.name.last}</h2>
     <p class="email">${employee.email}</p>
     <p class="city">${employee.location.city}</p>
   </div>
