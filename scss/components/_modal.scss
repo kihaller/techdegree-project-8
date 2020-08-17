@@ -12,6 +12,7 @@
 }
 
 .modal-close-button {
+  color: $color-text;
   cursor: pointer;
   font-size: 25px;
   position: absolute;
@@ -22,7 +23,7 @@
 }
 
 .modal-close-button:hover {
-  color: $color-text;
+  color: black;
   transform: scale(1.3);
 }
 

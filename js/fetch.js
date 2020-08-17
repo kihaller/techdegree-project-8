@@ -4,6 +4,7 @@ const overlay = document.getElementById("overlay");
 const grid = document.getElementById("grid-container");
 const urlAPI =
   "https://randomuser.me/api/?results=12&inc=name,dob,location,phone,picture,email&seed=1&nat=us";
+let overlayId = 0;
 
 /* Fetch data from API*/
 async function getRandomEmployees() {
@@ -50,6 +51,8 @@ async function createEmployeeOverlay(employee) {
   const employeeOverlay = document.createElement("div");
   employeeOverlay.classList.add("overlay");
   employeeOverlay.classList.add("hidden");
+  employeeOverlay.id = overlayId;
+  overlayId++;
   employeeOverlay.innerHTML = `
   <div class="modal">
     <button class="modal-close-button" id="modal-close-button">×</button>
@@ -57,6 +60,8 @@ async function createEmployeeOverlay(employee) {
       <img class="avatar" src="${employee.picture.large}" />
       <h2>${employee.name.first} ${employee.name.last}</h2>
       <p class="email">${employee.email}</p>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
       <p class="city">${employee.location.city}</p>
       <hr />
       <p>${employee.phone}</p>
@@ -77,6 +82,18 @@ async function createEmployeeOverlay(employee) {
     employeeOverlay.classList.add("hidden");
   });
   grid.appendChild(employeeOverlay);
+
+  // click listener for prev
+  const prevButton = employeeOverlay.querySelector(".prev");
+  prevButton.addEventListener("click", (event) => {
+    showPreviousOverlay(event.target.parentNode.parentNode.parentNode);
+  });
+
+  // click listener for next
+  const nextButton = employeeOverlay.querySelector(".next");
+  nextButton.addEventListener("click", (event) => {
+    showNextOverlay(event.target.parentNode.parentNode.parentNode);
+  });
 
   return employeeOverlay;
 }
