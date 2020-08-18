@@ -61,7 +61,7 @@ function createEmployeeOverlay(employee) {
   <div class="modal">
     <button class="modal-close-button" id="modal-close-button">×</button>
     <div class="content-modal">
-      <img class="avatar" src="${employee.picture.large}" />
+      <img class="avatar-overlay" src="${employee.picture.large}" />
       <h2>${employee.name.first} ${employee.name.last}</h2>
       <p class="email">${employee.email}</p>
       <a class="prev">&#10094;</a>
