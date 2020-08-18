@@ -1,6 +1,8 @@
 function showNextOverlay(currentOverlayElement) {
   //make array of all employee overlays
-  const overlayCollection = document.getElementsByClassName("overlay");
+  const overlayCollection = document.getElementsByClassName(
+    "overlay-in-slide-clicker"
+  );
   const overlayArray = Array.from(overlayCollection);
   //get current Overlay index
   const currentOverlayIndex = overlayArray.findIndex(
@@ -19,7 +21,9 @@ function showNextOverlay(currentOverlayElement) {
 
 function showPreviousOverlay(currentOverlayElement) {
   //make array of all employee overlays
-  const overlayCollection = document.getElementsByClassName("overlay");
+  const overlayCollection = document.getElementsByClassName(
+    "overlay-in-slide-clicker"
+  );
   const overlayArray = Array.from(overlayCollection);
   //get current Overlay index
   const currentOverlayIndex = overlayArray.findIndex(

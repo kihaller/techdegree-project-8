@@ -3,26 +3,29 @@ const closeButton = document.getElementById("modal-close-button");
 const overlay = document.getElementById("overlay");
 const grid = document.getElementById("grid-container");
 const urlAPI =
-  "https://randomuser.me/api/?results=12&inc=name,dob,location,phone,picture,email&seed=1&nat=us";
+  "https://randomuser.me/api/?results=12&inc=name,dob,location,phone,picture,email&nat=us";
 let overlayId = 0;
 
 /* Fetch data from API*/
 async function getRandomEmployees() {
   try {
     const response = await fetch(urlAPI);
-    return await response.json();
+    return response.json();
   } catch (error) {
     throw error;
   }
 }
 
 /* Create employee cards*/
-async function createEmployeeElements(employee) {
+function createEmployeeElements(employee) {
   // create employee card
-  const employeeCard = await createEmployeeCard(employee);
+  const employeeCard = createEmployeeCard(employee);
 
   // create employee overlay
-  const employeeOverlay = await createEmployeeOverlay(employee);
+  const employeeOverlay = createEmployeeOverlay(employee);
+
+  employeeCard.overlay = employeeOverlay;
+  employeeOverlay.card = employeeCard;
 
   // create click listener on card to show overlay
   employeeCard.addEventListener("click", () => {
@@ -30,7 +33,7 @@ async function createEmployeeElements(employee) {
   });
 }
 
-async function createEmployeeCard(employee) {
+function createEmployeeCard(employee) {
   console.log("Create employee card with employee: ", employee);
   const employeeCard = document.createElement("div");
   employeeCard.classList.add("card");
@@ -47,10 +50,11 @@ async function createEmployeeCard(employee) {
   return employeeCard;
 }
 
-async function createEmployeeOverlay(employee) {
+function createEmployeeOverlay(employee) {
   const employeeOverlay = document.createElement("div");
   employeeOverlay.classList.add("overlay");
   employeeOverlay.classList.add("hidden");
+  employeeOverlay.classList.add("overlay-in-slide-clicker");
   employeeOverlay.id = overlayId;
   overlayId++;
   employeeOverlay.innerHTML = `
