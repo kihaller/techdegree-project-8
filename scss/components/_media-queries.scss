@@ -7,5 +7,18 @@
   .modal {
     width: 30%;
   }
+}
 
+@media screen and (min-width: 400px) {
+  .card {
+    display: flex;
+  }
+
+  .avatar {
+    margin: 0.8em;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }
