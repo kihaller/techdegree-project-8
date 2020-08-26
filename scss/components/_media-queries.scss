@@ -22,3 +22,10 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
+
+@media screen and (max-width: 767px) {
+  .grid-container {
+    margin: 0;
+
+  }
+}
