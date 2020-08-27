@@ -4,7 +4,7 @@ The following project was created to train JavaScript skills using both **AJAX r
 
 
 
-![Employee Directory](/Users/kimhaller/Desktop/Projects_Techdegree/techdegree-capstone-portfolio/recordings/directory.gif)
+![Employee Directory](./doc/directory.gif)
 
 
 
